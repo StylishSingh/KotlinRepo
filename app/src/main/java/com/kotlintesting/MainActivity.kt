@@ -10,22 +10,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
+    val demo: Demo = Demo("Clicked")
+    var count: Int = 0
+    var mEmail: String = ""
+    var mPassword: String = ""
+
+
     val submitListener = View.OnClickListener { view ->
 
         when (view.id) {
             R.id.fabClick -> {
-                var demo: Demo = Demo("Demo class")
-
-                demo.show()
-
+                updateTextValue()
             }
         }
 
     }
-
-    var mEmail: String = ""
-    var mPassword: String = ""
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,5 +76,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //                bundle.putString("mEmail", mEmail)
 //                startActivity(intent, bundle)    }
         }
+    }
+
+
+    fun updateTextValue() {
+        val updateVal = "${demo.showValue()} ${count} times"
+
+        tvValue.text = updateVal
+
+        count++
+
+        demo.show()
     }
 }

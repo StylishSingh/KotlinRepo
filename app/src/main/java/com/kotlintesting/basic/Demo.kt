@@ -4,12 +4,23 @@ package com.kotlintesting.basic
  * @author Amanpal Singh.
  */
 
-class Demo (name: String) {
+class Demo {
 
-    var name=name;
+    var nullvalue: String? = null
+    var value: String = ""
 
-    fun show(){
-        println(name)
+    constructor()
+    constructor(value: String) {
+        this.value = value;
+
+    }
+
+    fun show() {
+        println(value)
+    }
+
+    fun showValue(): String {
+        return value
     }
 
 }

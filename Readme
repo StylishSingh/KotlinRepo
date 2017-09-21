@@ -1,0 +1,3 @@
+There are two types of constructor in kotlin: PRIMARY and SECONDARY
+
+PRIMARY: Does not have any annotations or visibility modifiers, the constructor keyword can be omitted:
