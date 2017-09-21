@@ -53,6 +53,8 @@ class Dashboard : AppCompatActivity() {
     }
 
     fun onItemClicked(adapterPosition: Int) {
+
+
         Toast.makeText(this,"${users[adapterPosition]} clicked",Toast.LENGTH_SHORT).show()
     }
 }

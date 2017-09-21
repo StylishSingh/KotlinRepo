@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
+import com.kotlintesting.basic.Demo
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -12,8 +13,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     val submitListener = View.OnClickListener { view ->
 
         when (view.id) {
-            R.id.btnSubmit -> {
-                submitClick()
+            R.id.fabClick -> {
+                var demo: Demo = Demo("Demo class")
+
+                demo.show()
+
             }
         }
 
@@ -27,13 +31,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnSubmit.setOnClickListener(submitListener)
+        fabClick.setOnClickListener(submitListener)
 
-        /* btnSubmit.setOnClickListener(this)
-          btnSubmit.setOnClickListener {
-              submitClick()
-          }
 
+        btnSubmit.setOnClickListener {
+            submitClick()
+        }
+/*          btnSubmit.setOnClickListener(this)
           btnSubmit.setOnClickListener(object : View.OnClickListener {
               override fun onClick(p0: View?) {
                   submitClick()
