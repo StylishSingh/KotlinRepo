@@ -11,18 +11,21 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    val demo: Demo = Demo("Clicked")
+    private val demo: Demo = Demo("Clicked")
 
-    var count: Int = 0
-    var mEmail: String = ""
-    var mPassword: String = ""
+    private var count: Int = 0
+    private var mEmail: String = ""
+    private var mPassword: String = ""
 
 
-    val submitListener = View.OnClickListener { view ->
+    private val submitListener = View.OnClickListener { view ->
 
         when (view.id) {
             R.id.fabClick -> {
-                val demo2: Demo2 = Demo2("Anuj")
+                val demo2 = Demo2("Anuj")
+
+                demo2.addData()
+                demo2.showList()
 
                 updateTextValue()
             }
@@ -59,11 +62,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
-    fun submitClick() {
+    private fun submitClick() {
         mEmail = etEmail.text.toString()
         mPassword = etPassword.text.toString()
 
-        println("mEmail = ${mEmail}")
+        println("mEmail = $mEmail")
         println("mPassword = $mPassword")
 
         if (mEmail.contentEquals("") && mPassword.contentEquals(""))
@@ -73,7 +76,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         else if (mPassword.contentEquals(""))
             Toast.makeText(this, "please enter mPassword", Toast.LENGTH_SHORT).show()
         else {
-            val intent: Intent = Intent(this, Dashboard::class.java)
+            val intent = Intent(this, Dashboard::class.java)
             intent.putExtra("mEmail", mEmail)
             startActivity(intent)
 //                val bundle: Bundle = Bundle()
@@ -83,8 +86,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
 
-    fun updateTextValue() {
-        val updateVal = "${demo.showValue()} ${count} times"
+    private fun updateTextValue() {
+        val updateVal = "${demo.showValue()} $count times"
 
         tvValue.text = updateVal
 

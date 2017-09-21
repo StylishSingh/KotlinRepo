@@ -4,13 +4,13 @@ package com.kotlintesting.basic
  * @author Amanpal Singh.
  */
 
-class Demo {
+class Demo(num:Int) {
 
     var nullValue: String? = null
     var value: String = ""
 
 
-    constructor(value: String) {
+    constructor(value: String) :this(0){
         this.value = value;
     }
 
