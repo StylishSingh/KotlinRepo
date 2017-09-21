@@ -6,11 +6,13 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
 import com.kotlintesting.basic.Demo
+import com.kotlintesting.basic.Demo2
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     val demo: Demo = Demo("Clicked")
+
     var count: Int = 0
     var mEmail: String = ""
     var mPassword: String = ""
@@ -20,6 +22,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         when (view.id) {
             R.id.fabClick -> {
+                val demo2: Demo2 = Demo2("Anuj")
+
                 updateTextValue()
             }
         }

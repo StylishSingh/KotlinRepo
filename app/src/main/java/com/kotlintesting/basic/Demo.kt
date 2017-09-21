@@ -6,13 +6,12 @@ package com.kotlintesting.basic
 
 class Demo {
 
-    var nullvalue: String? = null
+    var nullValue: String? = null
     var value: String = ""
 
-    constructor()
+
     constructor(value: String) {
         this.value = value;
-
     }
 
     fun show() {
