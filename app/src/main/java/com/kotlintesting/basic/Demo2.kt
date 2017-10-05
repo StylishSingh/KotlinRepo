@@ -7,6 +7,7 @@ package com.kotlintesting.basic
 class Demo2(firstName: String) {
 
     var firstName: String = firstName
+
     lateinit var list: ArrayList<Address>
 
     init {
@@ -22,6 +23,7 @@ class Demo2(firstName: String) {
             list.add(model)
 
         }
+
     }
 
     fun showList() {

@@ -7,6 +7,8 @@ import android.view.View
 import android.widget.Toast
 import com.kotlintesting.basic.Demo
 import com.kotlintesting.basic.Demo2
+import com.kotlintesting.fresco.FrescoActivity
+import com.kotlintesting.fresco.ListPhotos
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
 
         fabClick.setOnClickListener(submitListener)
-
+        btnFresco.setOnClickListener(this)
 
         btnSubmit.setOnClickListener {
             submitClick()
@@ -56,6 +58,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         when (view.id) {
             R.id.btnSubmit -> {
                 submitClick()
+            }
+
+            R.id.btnFresco -> {
+                startActivity(Intent(this, FrescoActivity::class.java))
+//                startActivity(Intent(this, ListPhotos::class.java))
             }
         }
 
